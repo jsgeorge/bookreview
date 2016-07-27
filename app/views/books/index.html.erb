@@ -1,6 +1,6 @@
 <nav class="navbar navbar-default">
   <div class="container">
-	<ul class="nav navbar-nav">	
+	<ul class="nav navbar-nav">
 		<li class="dropdown">
 			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Categories<span class="caret"></span></a>
 			<ul class="dropdown-menu" role="menu">
@@ -28,14 +28,15 @@
 	<% @books.each do |book| %>
 
 		 <div class="col-sm-2 col-md-2">
-			<div class="thumbnail
-			
+			<div class="thumbnail">
+				<a href="/books/<%= book.id %>">
+			<%= image_tag book.book_img.url(:book_index) %></a>
 				<div class="caption">
-					<h4><%= link_to book.title, book_path(book) %> </h4>
+					<h5><strong><%= link_to book.title, book_path(book) %> </strong></h5>
 					<h6>By:<%= book.author %></h6>
 				</div>
 			</div>
 		  </div>
-		
+
 	<% end %>
 <% end %>

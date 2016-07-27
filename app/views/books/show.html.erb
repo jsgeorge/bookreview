@@ -1,2 +1,21 @@
-<h1>Books#show</h1>
-<p>Find me in app/views/books/show.html.erb</p>
+<div>
+<%= link_to "Back", root_path, class:"btn btn-primary btn-sm"  %>
+</div>
+<div class="col-md-3">
+	<%= image_tag @book.book_img.url(:book_index) %></a>
+	
+</div>
+<div class="col-md-8">
+<h2><%= @book.title %></h2
+
+
+	<h4>By:<%= @book.author %></h4>
+	
+	<p><%= @book.description %></p>
+
+	<% if user_signed_in? %>
+	<%= link_to "Edit", edit_book_path(@book), class:"btn btn-primary" %>
+	<%= link_to "Delete", book_path(@book), method: :delete, data: {confirm: "Delete book"} %>
+	
+	<% end %>
+	</div>
